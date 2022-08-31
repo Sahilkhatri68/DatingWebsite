@@ -1,0 +1,19 @@
+.maindiv {
+    padding: 20px;
+}
+
+.carddiv {
+    width: 100%;
+    margin: 120px auto;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    
+}
+.maincont{
+    width: 270px;
+    height: 500px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
