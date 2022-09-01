@@ -13,6 +13,8 @@ import {
 import Subscription from './Components/Subscription';
 import Profile from './Components/Profile';
 import axios  from 'axios';
+import Slider from './Components/Slider/Slider';
+
 axios.defaults.withCredentials = true
 
 function App() {
@@ -28,6 +30,7 @@ function App() {
         <Route path="/register" exact element={<Register />}></Route>
         <Route path="/subscribe" exact element={<Subscription />}></Route>
         <Route path="/profile" exact element={<Profile  /> }></Route>
+        <Route path="/slider" exact element={<Slider  /> }></Route>
       </Routes>
 
       <Footer />
