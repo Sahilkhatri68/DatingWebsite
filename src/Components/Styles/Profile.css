@@ -16,7 +16,7 @@
 }
 
 .rightcontdiv {
-    width: 70%;
+    width: 80%;
 
     /* margin: auto;
     text-align: center;
@@ -240,13 +240,15 @@
     font-size: 18px;
     font-weight: 500;
 }
-.rechargediv{
+
+.rechargediv {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-.dot{
+
+.dot {
     color: #bc1888;
     width: 12px;
     border-radius: 50%;
@@ -254,7 +256,8 @@
     height: 12px;
 
 }
-.dottwo{
+
+.dottwo {
     color: #3fff42;
     width: 12px;
     border-radius: 50%;
@@ -262,6 +265,50 @@
     height: 12px;
 
 }
-.itemrec{
+
+.itemrec {
     margin-left: 10px;
+}
+
+@media(max-width:1200px) {
+    .maindiv {
+        padding: 120px 20px 18px 20px;
+        width: 100%;
+        margin: auto;
+    }
+}
+
+@media(max-width:1000px) {
+    .maindiv {
+        padding: 120px 10px 10px 10px;
+        width: 100%;
+        margin: auto;
+    }
+    .imgdiv{
+        width: 100%;
+        margin: auto;
+    }
+}
+@media(max-width:850px){
+    .maindiv{
+        width: 100%;
+    }
+    .bottomdiv{
+        padding:15px ;
+    }
+    .leftcontdiv{
+        width: 25%;
+    }
+    .rightcontdiv{
+        width: 75%;
+    }
+    .imguser{
+        width: 100%;
+        margin: auto;
+    }
+}
+@media(max-width:800px){
+    .bottomdiv{
+        padding: 2px;
+    }
 }
