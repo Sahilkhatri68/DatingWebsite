@@ -27,7 +27,7 @@ function App() {
         <Route path="/login" exact element={<Login />}></Route>
         <Route path="/register" exact element={<Register />}></Route>
         <Route path="/subscribe" exact element={<Subscription />}></Route>
-        <Route path="/profile" exact element={<Profile user={1} /> }></Route>
+        <Route path="/profile" exact element={<Profile  /> }></Route>
       </Routes>
 
       <Footer />
