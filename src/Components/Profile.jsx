@@ -18,6 +18,9 @@ import PowerSettingsNewIcon from '@mui/icons-material/PowerSettingsNew';
 import { motion } from "framer-motion"
 import Header from './Header';
 import Footer from './Footer';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+import EmptyProfile from './EmptyProfile';
 
 function Profile() {
     const scrollToTop = () => {
@@ -30,10 +33,52 @@ function Profile() {
         scrollToTop();
     }, [])
 
+
+    const [user, setUser] = useState([])
+    async function Getuser() {
+        try {
+            const resp = await axios.get("http://localhost:4000/api/profile", {
+                withCredentials: true,
+            });
+            setUser(resp.data);
+            console.log(resp.data);
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    useEffect(() => {
+        Getuser();
+    }, [])
+
+
+    // check user 
+    async function CheckUser() {
+        try {
+            const resp = await axios.post("http://localhost:4000/api/login/checklogin", {
+                withCredentials: true,
+            });
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    // logout function
+    async function Userlogout() {
+        try {
+            const resp = await axios.get("http://localhost:4000/api/logout", {
+                withCredentials: true,
+            });
+            console.log(resp.data);
+            console.log("logout done ");
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
         <>
             <Header />
-            <motion.div
+                {user.length === 0 ? (<EmptyProfile/>): ( <motion.div
                 initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -10, opacity: 0 }}
@@ -45,7 +90,8 @@ function Profile() {
                 <div className='maindiv'>
                     <div className="leftcontdiv">
                         <div className='logodiv'><img src={datingLogo} className="logomain" /></div>
-                        <div className='itemsdiv'><div><EqualizerIcon className='muiicons' /></div> <div className='textstlye'> My Dashboard</div></div>
+
+                        <div className='itemsdiv'><div><EqualizerIcon className='muiicons' /></div> <div className='textstlye'>My Dashboard</div></div>
                         <div className='itemsdiv'><div><PersonIcon className='muiicons' /></div> <div className='textstlye'> Accounts</div></div>
                         <div className='itemsdiv'><div><PhoneIphoneIcon className='muiicons' /></div> <div className='textstlye'> My Mobile</div></div>
                         <div className='itemsdiv'><div><CurrencyRupeeIcon className='muiicons' /></div> <div className='textstlye'> My Payements</div></div>
@@ -58,10 +104,10 @@ function Profile() {
                         <div className='rightprofile'>
                             <div className="rightsidediv"><div className='head'>Profile Page</div> </div>
                             <div className="rightsidedivtwo"> <div> <NotificationsActiveIcon /> &nbsp;     </div> <div className="dropdown">
-                                <button className="dropbtn">Hello <div className='spandiv'>ABC</div>  <ArrowDropDownIcon /> </button>
+                                <button className="dropbtn">Hello <div className='spandiv'>{user.fullname}</div>  <ArrowDropDownIcon /> </button>
                                 <div className="dropdown-content">
                                     <a href="#"><SettingsIcon /> Settings</a>
-                                    <a href="#"><PowerSettingsNewIcon /> Logout</a>
+                                    <button style={{ height: 50 }} onClick={() => Userlogout()}><PowerSettingsNewIcon /> Logout</button>
                                 </div>
                             </div>
                             </div>
@@ -73,15 +119,28 @@ function Profile() {
                                 </div>
                                 <div className='insidecard'>
                                     <div className='textdiv'>Number</div>
-                                    <div className='righttextdiv'>+91 9898787656</div>
+                                    <div className='righttextdiv'>{user.phone}</div>
+                                </div>
+                                <div className='insidecard'>
+                                    <div className='textdiv'>Age</div>
+                                    <div className='righttextdiv'>{user.age}</div>
+                                </div>
+                                <div className='insidecard'>
+                                    <div className='textdiv'>City</div>
+                                    <div className='righttextdiv'>{user.city}</div>
+                                </div>
+                                <div className='insidecard'>
+                                    <div className='textdiv'>Country</div>
+                                    <div className='righttextdiv'>{user.country}</div>
                                 </div>
                                 <div className='insidecard'>
                                     <div className='textdiv'>Email</div>
-                                    <div className='righttextdiv'>ABC@gmail.com</div>
+                                    <div className='righttextdiv'>{user.email}</div>
                                 </div>
-                                <div className='insidecardbtn'>
-                                    <button className='profilebtn'>Explore</button>
-                                </div>
+                                <Link to="/slider">
+                                    <div className='insidecardbtn'>
+                                        <button className='profilebtn'>Explore</button>
+                                    </div></Link>
                             </div>
                             <div className='rightcard'>
                                 <div className='forborder'>
@@ -157,7 +216,8 @@ function Profile() {
 
                     </div>
                 </div>
-            </motion.div>
+            </motion.div>)}
+           
             <Footer />
         </>
     )

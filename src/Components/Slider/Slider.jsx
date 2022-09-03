@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import axios from 'axios';
 import { Swiper, SwiperSlide } from "swiper/react"
 import { EffectCards } from "swiper";
 import "./Slider.css";
@@ -15,6 +15,7 @@ import Header from '../Header';
 import Footer from '../Footer';
 import ChatContainer from '../ChatContainer/ChatContainer';
 import { motion } from "framer-motion"
+import EmptyProfile from '../EmptyProfile';
 
 const db = [
     {
@@ -60,10 +61,29 @@ function Slider() {
     useEffect(() => {
         scrollToTop();
     }, [])
+
+
+    // login check
+    const [user, setUser] = useState([])
+    async function Getuser() {
+        try {
+            const resp = await axios.get("http://localhost:4000/api/profile", {
+                withCredentials: true,
+            });
+            setUser(resp.data);
+            console.log(resp.data);
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    useEffect(() => {
+        Getuser();
+    }, [])
+
     return (
         <>
             <Header />
-            <motion.div
+            {user.length === 0 ? (<EmptyProfile />) : (<motion.div
                 initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -10, opacity: 0 }}
@@ -91,7 +111,8 @@ function Slider() {
                     </div>
 
                 </div>
-            </motion.div>
+            </motion.div>)}
+
             <Footer />
         </>
     )

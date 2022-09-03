@@ -111,7 +111,7 @@
     background-color: white;
     box-shadow: -4px 4px 4px 4px #e7e7e7;
     border-radius: 10px;
-    height: 450px !important;
+    height: auto;
 
 }
 
@@ -175,13 +175,11 @@
 .textdiv {
     font-size: 20px;
     font-weight: 500;
-    margin-top: 10px;
 }
 
 .righttextdiv {
     font-size: 16px;
     font-weight: 400;
-    margin-top: 10px;
 }
 
 .rightcard {
@@ -284,31 +282,38 @@
         width: 100%;
         margin: auto;
     }
-    .imgdiv{
+
+    .imgdiv {
         width: 100%;
         margin: auto;
     }
 }
-@media(max-width:850px){
-    .maindiv{
+
+@media(max-width:850px) {
+    .maindiv {
         width: 100%;
     }
-    .bottomdiv{
-        padding:15px ;
+
+    .bottomdiv {
+        padding: 15px;
     }
-    .leftcontdiv{
+
+    .leftcontdiv {
         width: 25%;
     }
-    .rightcontdiv{
+
+    .rightcontdiv {
         width: 75%;
     }
-    .imguser{
+
+    .imguser {
         width: 100%;
         margin: auto;
     }
 }
-@media(max-width:800px){
-    .bottomdiv{
+
+@media(max-width:800px) {
+    .bottomdiv {
         padding: 2px;
     }
 }

@@ -16,6 +16,7 @@ import axios from 'axios';
 import Slider from './Components/Slider/Slider';
 import DatingSlider from './Components/DatingSlider/DatingSlider';
 import LeftDrawer from './Components/LeftDrawer/LeftDrawer';
+import EmptyProfile from './Components/EmptyProfile';
 
 axios.defaults.withCredentials = true
 
@@ -35,6 +36,7 @@ function App() {
         <Route path="/slider" exact element={<Slider />}></Route>
         <Route path="/datingslider" exact element={<DatingSlider />}></Route>
         <Route path="/leftdrawer" exact element={<LeftDrawer />}></Route>
+        <Route path="/emptyprofile" exact element={<EmptyProfile />}></Route>
       </Routes>
 
       {/* <Footer /> */}
