@@ -1,0 +1,21 @@
+.chatprofile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 17px 0px 15px;
+    padding: 11px;
+}
+.chatuserimg{
+    width: 100%;
+    margin: auto;
+    border-radius: 50%;
+}
+.profileimg{
+    width: 20%;
+}
+.usernamechat{
+    font-size: 24px;
+    color:white;
+    font-weight: 500;
+
+}

@@ -26,6 +26,8 @@ import best_western_cedars2 from "./images/best_western_cedars2.jpeg"
 import best_western_cedars3 from "./images/best_western_cedars3.jpeg"
 import best_western_cedars4 from "./images/best_western_cedars4.jpeg"
 import { motion } from "framer-motion"
+import Header from './Header';
+import Footer from './Footer';
 
 function FrontEnd() {
     const scrollToTop = () => {
@@ -39,6 +41,8 @@ function FrontEnd() {
     }, [])
 
     return (
+        <>
+        <Header/>
         <motion.div
             initial={{ y: -10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -3146,6 +3150,8 @@ function FrontEnd() {
             </div>
 
         </motion.div>
+        <Footer/>
+        </>
 
     )
 }

@@ -6,6 +6,8 @@ import google from "./images/google.svg";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion"
+import Header from './Header';
+import Footer from './Footer';
 
 
 function Login() {
@@ -57,6 +59,8 @@ function Login() {
     }, [])
 
     return (
+        <>
+        <Header/>
         <motion.div
             initial={{ y: -10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -140,7 +144,7 @@ function Login() {
                                     <label className="block">
                                         <span className="flex justify-between items-center text-neutral-800 dark:text-neutral-200">
                                             Password
-                                            <a className="text-sm" href="/chisfis/forgot-pass">
+                                            <a className="text-sm" href="#">
                                                 Forgot password?
                                             </a>
                                         </span>
@@ -148,6 +152,7 @@ function Login() {
                                             type="password"
                                             className="block w-full border focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-6000 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-11 px-4 py-3 mt-1"
                                             name={password}
+                                            placeholder="password"
                                             onChange={(e) => setPassword(e.target.value)}
                                         />
                                     </label>
@@ -170,6 +175,8 @@ function Login() {
 
 
         </motion.div>
+        <Footer/>
+        </>
     )
 }
 

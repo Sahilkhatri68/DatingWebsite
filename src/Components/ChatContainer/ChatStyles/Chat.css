@@ -1,0 +1,6 @@
+.ChatDsplay {
+    padding: 10px;
+    height: 35vh;
+    overflow-y: auto;
+
+}

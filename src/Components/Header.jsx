@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
 
-
 function Header() {
     return (
         <div>
@@ -65,63 +64,49 @@ function Header() {
                         <div className="mx-3"> <Link to="/login">Login</Link>   </div>
                         <div className="mx-3 border-l border-r px-2"><Link to="/register">Signup</Link> </div>
                         <div className="mx-3"><Link to="/subscribe">Subscribe</Link> </div>
-                        <div className=" bg-[#4f46e5] w-[30px] h-[30px] rounded-full flex items-center justify-center">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={18}
-                                height={18}
-                                fill="currentColor"
-                                className="bi bi-search fill-white"
-                                viewBox="0 0 16 16"
-                            >
-                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                            </svg>
-                        </div>
+
                     </div>
                     <div className="w-full lg:hidden border rounded-full py-2 px-3 flex items-center justify-between shadow-xl hover:shadow-2xl">
-                        <div className="flex items-center">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={18}
-                                height={18}
-                                fill="currentColor"
-                                className="bi bi-search mx-3"
-                                viewBox="0 0 16 16"
-                            >
-                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                            </svg>
-                            <div>
-                                <p className="font-sans text-[14px] leading-[20px] text-[#111827]">
-                                    Where to?
-                                </p>
-                                <ul className="flex text-[12px] text-[#6b7280] leading-[16px]">
-                                    <li>Anywhere</li>
-                                    <li>Any week</li>
-                                    <li>Add Guests</li>
-                                </ul>
+                        <Link to="/slider">
+                            <div className="flex items-center">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width={18}
+                                    height={18}
+                                    fill="currentColor"
+                                    className="bi bi-search mx-3"
+                                    viewBox="0 0 16 16"
+                                >
+                                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                                </svg>
+                                <div>
+                                    <p className="font-sans text-[14px] leading-[20px] text-[#111827]">
+                                        Find your Love
+                                    </p>
+                                    <ul className="flex text-[12px] text-[#6b7280] leading-[16px]">
+                                        <li>Near &nbsp;&nbsp;&nbsp;&nbsp; </li>
+                                        <li>Far  &nbsp;&nbsp;&nbsp;&nbsp; </li>
+                                        <li>Wherever you want  &nbsp;&nbsp;&nbsp;&nbsp; </li>
+                                    </ul>
+                                </div>
                             </div>
-                        </div>
-                        <div className="bg-[#4f46e5] flex items-center justify-center h-[30px] w-[30px] rounded-full">
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width={18}
-                                height={18}
-                                fill="currentColor"
-                                className="bi bi-arrow-left-right fill-white"
-                                viewBox="0 0 16 16"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    d="M1 11.5a.5.5 0 0 0 .5.5h11.793l-3.147 3.146a.5.5 0 0 0 .708.708l4-4a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 11H1.5a.5.5 0 0 0-.5.5zm14-7a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H14.5a.5.5 0 0 1 .5.5z"
-                                />
-                            </svg>
-                        </div>
+                        </Link>
+                        <Link to="/slider">
+                            <div className="bg-[#4f46e5] flex items-center justify-center h-[30px] w-[30px] rounded-full ">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search-heart fill-white" viewBox="0 0 16 16">
+                                    <path d="M6.5 4.482c1.664-1.673 5.825 1.254 0 5.018-5.825-3.764-1.664-6.69 0-5.018Z" />
+                                    <path d="M13 6.5a6.471 6.471 0 0 1-1.258 3.844c.04.03.078.062.115.098l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1.007 1.007 0 0 1-.1-.115h.002A6.5 6.5 0 1 1 13 6.5ZM6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11Z" />
+                                </svg>
+                            </div>
+                        </Link>
                     </div>
                     <div className="sm:w-[245px] lg:w-[345px] hidden md:block">
                         <div className="float-right flex items-center">
-                            <div className="border py-2 px-4  font-sans font-medium text-[#111827] rounded-full hover:border-gray-400 mx-2 hidden xl:block">
-                                List your property
-                            </div>
+                            <Link to="/slider"> <div className="border py-2 px-4  font-sans font-medium text-[#111827] rounded-full hover:border-gray-400 mx-2 hidden xl:block">
+                                Find your love
+
+                            </div></Link>
+
                             <Link to="/profile">
                                 <div className=" hover:bg-gray-200 h-[40px] w-[40px] flex items-center justify-center rounded-full">
                                     <svg

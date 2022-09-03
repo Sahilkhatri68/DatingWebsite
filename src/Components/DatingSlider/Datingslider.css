@@ -1,0 +1,8 @@
+.outercont{
+   padding: 50px 50px 50px 50px;
+}
+.insidecardcont{
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+}
