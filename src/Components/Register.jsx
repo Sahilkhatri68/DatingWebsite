@@ -39,8 +39,37 @@ function Register() {
     const [city, setCity] = useState("");
     const [country, setCountry] = useState("");
     const [phone, setPhone] = useState("");
+    const [imageurl, setImageurl] = useState("");
 
 
+
+    const uploadFile = (url, file) => {
+        let formData = new FormData();
+        formData.append("uploadedFile", file);
+        axios
+            .post(url, formData, {
+                headers: {
+                    "Content-Type": "multipart/form-data",
+                },
+            })
+            .then((e) => {
+
+                console.log(e.data.url)
+                setImageurl(e.data.url)
+
+            })
+            .catch((e) => {
+
+                console.log(e)
+            });
+
+    };
+    const handleOnChange = (e) => {
+        let url = `http://localhost:4000/api/imageupload`;
+        let file = e.target.files[0];
+        uploadFile(url, file);
+        // getFileData();
+    };
     async function Signup() {
         const res = await axios.post("http://localhost:4000/api/signup", {
             fullname: fullname,
@@ -48,6 +77,7 @@ function Register() {
             email: email,
             password: password,
             age: age,
+            imageurl: imageurl,
             gender: gender,
             city: city,
             country: country,
@@ -69,6 +99,10 @@ function Register() {
                 text: 'Invalid Details / User Already exists',
             })
         })
+
+
+        // upload file 
+
     }
     // console.log(gender)
     return (
@@ -192,9 +226,10 @@ function Register() {
                                                 Gender
                                             </span>
                                             <select id="cars" className="block w-full border bg-white rounded-2xl text-sm font-normal h-11 px-4 py-3 mt-1" name={gender} onChange={(e) => setGender(e.target.value)} >
-                                                <option value="Male">Male</option>
+                                                <option value="Others">Other</option>
                                                 <option value="Female">Female</option>
-                                                <option value="Others">Others</option>
+                                                <option value="Male">Male</option>
+
                                             </select>
                                         </label>
 
@@ -245,6 +280,19 @@ function Register() {
                                                 placeholder='passowrd'
                                                 name={password}
                                                 onChange={(e) => setPassword(e.target.value)}
+                                            />
+                                        </label>
+                                        <label className="block">
+                                            <span className="flex justify-between items-center text-neutral-800 dark:text-neutral-200">
+                                                Image
+                                            </span>
+                                            <input
+                                                type="file"
+                                                className="block w-full border focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 bg-white dark:border-neutral-700 dark:focus:ring-primary-6000 dark:focus:ring-opacity-25 dark:bg-neutral-900 rounded-2xl text-sm font-normal h-11 px-4 py-3 mt-1"
+                                                // name={uploadedFile}
+
+
+                                                onChange={handleOnChange}
                                             />
                                         </label>
                                         <button

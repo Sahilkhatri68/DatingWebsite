@@ -36,13 +36,13 @@ function Profile() {
     }, [])
 
 
-    const [user, setUser] = useState([])
+    const [users, setUsers] = useState([])
     async function Getuser() {
         try {
             const resp = await axios.get("http://localhost:4000/api/profile", {
                 withCredentials: true,
             });
-            setUser(resp.data);
+            setUsers(resp.data);
             console.log(resp.data);
         } catch (error) {
             console.log(error)
@@ -81,7 +81,7 @@ function Profile() {
     return (
         <>
             <Header />
-            {user.length === 0 ? (<EmptyProfile />) : (<motion.div
+            {users.length === 0 ? (<EmptyProfile />) : (<motion.div
                 initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -10, opacity: 0 }}
@@ -107,7 +107,7 @@ function Profile() {
                         <div className='rightprofile'>
                             <div className="rightsidediv"><div className='head'>Profile Page</div> </div>
                             <div className="rightsidedivtwo"> <div> <NotificationsActiveIcon /> &nbsp;     </div> <div className="dropdown">
-                                <button className="dropbtn">Hello <div className='spandiv'>{user.fullname}</div>  <ArrowDropDownIcon /> </button>
+                                <button className="dropbtn">Hello <div className='spandiv'>{users.fullname}</div>  <ArrowDropDownIcon /> </button>
                                 <div className="dropdown-content">
                                     <a href="#"><SettingsIcon /> Settings</a>
                                     <button style={{ height: 50 }} onClick={() => Userlogout()}><PowerSettingsNewIcon /> Logout</button>
@@ -122,27 +122,27 @@ function Profile() {
                                 </div>
                                 <div className='insidecard'>
                                     <div className='textdiv'>Number</div>
-                                    <div className='righttextdiv'>{user.phone}</div>
+                                    <div className='righttextdiv'>{users.phone}</div>
                                 </div>
                                 <div className='insidecard'>
                                     <div className='textdiv'>Age</div>
-                                    <div className='righttextdiv'>{user.age}</div>
+                                    <div className='righttextdiv'>{users.age}</div>
                                 </div>
                                 <div className='insidecard'>
                                     <div className='textdiv'>Gender</div>
-                                    <div className='righttextdiv'>{user.gender}</div>
+                                    <div className='righttextdiv'>{users.gender}</div>
                                 </div>
                                 <div className='insidecard'>
                                     <div className='textdiv'>City</div>
-                                    <div className='righttextdiv'>{user.city}</div>
+                                    <div className='righttextdiv'>{users.city}</div>
                                 </div>
                                 <div className='insidecard'>
                                     <div className='textdiv'>Country</div>
-                                    <div className='righttextdiv'>{user.country}</div>
+                                    <div className='righttextdiv'>{users.country}</div>
                                 </div>
                                 <div className='insidecard'>
                                     <div className='textdiv'>Email</div>
-                                    <div className='righttextdiv'>{user.email}</div>
+                                    <div className='righttextdiv'>{users.email}</div>
                                 </div>
                                 <Link to="/slider">
                                     <div className='insidecardbtn'>
