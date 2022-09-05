@@ -19,10 +19,12 @@ import { motion } from "framer-motion"
 import Header from './Header';
 import Footer from './Footer';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import EmptyProfile from './EmptyProfile';
 
 function Profile() {
+    let navigate = useNavigate();
+
     const scrollToTop = () => {
         window.scrollTo({
             top: 0,
@@ -69,6 +71,7 @@ function Profile() {
             });
             console.log(resp.data);
             console.log("logout done ");
+            navigate("/", { replace: true });
 
         } catch (error) {
             console.log(error)
@@ -78,7 +81,7 @@ function Profile() {
     return (
         <>
             <Header />
-                {user.length === 0 ? (<EmptyProfile/>): ( <motion.div
+            {user.length === 0 ? (<EmptyProfile />) : (<motion.div
                 initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -10, opacity: 0 }}
@@ -124,6 +127,10 @@ function Profile() {
                                 <div className='insidecard'>
                                     <div className='textdiv'>Age</div>
                                     <div className='righttextdiv'>{user.age}</div>
+                                </div>
+                                <div className='insidecard'>
+                                    <div className='textdiv'>Gender</div>
+                                    <div className='righttextdiv'>{user.gender}</div>
                                 </div>
                                 <div className='insidecard'>
                                     <div className='textdiv'>City</div>
@@ -217,7 +224,7 @@ function Profile() {
                     </div>
                 </div>
             </motion.div>)}
-           
+
             <Footer />
         </>
     )

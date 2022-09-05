@@ -18,7 +18,7 @@ function EmptyProfile() {
                     width: "100%",
                     height: "100%",
                 }} className='outrdiv'>
-                <h1 className='headerempty'>Please <span className='spn'>Log-In</span>  to watch profile</h1>
+                <h1 className='headerempty'>Please <span className='spn'>Log-In</span>  to explore more </h1>
                 <div className='imgindiv'>
                     <img src={pic} className="loginpic" />
                 </div>

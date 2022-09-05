@@ -82,37 +82,40 @@ function Slider() {
 
     return (
         <>
-            <Header />
-            {user.length === 0 ? (<EmptyProfile />) : (<motion.div
-                initial={{ y: -10, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: -10, opacity: 0 }}
-                transition={{ duration: 0.2, stiffness: 500 }}
-                style={{
-                    width: "100%",
-                    height: "100%",
-                }} className='mainslideDiv'>
-                <div className='insidediv'>
-                    <div className='chatcontpage'><ChatContainer /></div>
-                    <div className='swiper-container'>
-                        <div className='cardContainer'>
-                            {characters.map((character) =>
-                                <TinderCard className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
-                                    <div style={{ backgroundImage: 'url(' + character.url + ')' }} className='card'>
-                                        <h3>{character.name}</h3>
-                                    </div>
-                                </TinderCard>
-                            )}
+            <div className='mainhd'>
+                <Header />
+            </div>
+            <div className='righthd'>
+                {user.length === 0 ? (<EmptyProfile />) : (<motion.div
+                    initial={{ y: -10, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -10, opacity: 0 }}
+                    transition={{ duration: 0.2, stiffness: 500 }}
+                    style={{
+                        width: "100%",
+                        height: "100%",
+                    }} className='mainslideDiv'>
+                    <div className='insidediv'>
+                        <div className='chatcontpage'><ChatContainer /></div>
+                        <div className='swiper-container'>
+                            <div className='cardContainer'>
+                                {characters.map((character) =>
+                                    <TinderCard className='swipe' key={character.name} onSwipe={(dir) => swiped(dir, character.name)} onCardLeftScreen={() => outOfFrame(character.name)}>
+                                        <div style={{ backgroundImage: 'url(' + character.url + ')' }} className='card'>
+                                            <h3>{character.name}</h3>
+                                        </div>
+                                    </TinderCard>
+                                )}
 
+                            </div>
+                            <div className='swipe-info'>
+                                {lastDirection ? <p>You Swiped {lastDirection}</p> : <p></p>}
+                            </div>
                         </div>
-                        <div className='swipe-info'>
-                            {lastDirection ? <p>You Swiped {lastDirection}</p> : <p></p>}
-                        </div>
+
                     </div>
-
-                </div>
-            </motion.div>)}
-
+                </motion.div>)}
+            </div>
             <Footer />
         </>
     )

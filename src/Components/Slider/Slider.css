@@ -1,24 +1,34 @@
+.mainhd {
+    padding-bottom: 93px;
+}
+
 .mainslideDiv {
-    padding: 150px 50px 50px 50px;
+    /* padding: 150px 50px 50px 50px; */
     /* background-image: linear-gradient(to right bottom, #f6d6df, #f8d8e0, #fbd9e0, #fddbe0, #ffdde1); */
     height: 100vh;
 }
-.chatcontpage{
-    width: 40%;
+
+.chatcontpage {
+    max-width: 350px;
     border: 1px solid gainsboro;
     border-radius: 10px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    ;
 }
+
 .insidediv {
 
 
     display: flex;
-    justify-content: space-between;
-    width: 60%;
+    width: 100%;
 }
 
 .swipe {
     position: absolute;
+}
+
+.swiper-container {
+    margin: auto;
 }
 
 .cardContainer {
@@ -30,13 +40,14 @@
 .card {
     position: relative;
     background-color: #fff;
-    width: 80vw;
-    max-width: 260px;
-    height: 300px;
-    box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.30);
-    border-radius: 20px;
+    width: 300px;
+    max-width: 300px;
+    height: 400px;
+    box-shadow: 0px 5px 37px -12px rgb(0 0 0 / 30%);
+    border-radius: 27px;
     background-size: cover;
     background-position: center;
+
 }
 
 .cardContent {
@@ -51,11 +62,15 @@
     bottom: 0;
     margin: 10px;
     color: #fff;
+    font-weight: 500;
 }
 
 .swipe-info {
-    margin-top: 20px;
-    font-size: 20px;
+    margin-top: 100px;
+    font-size: 24px;
     color: black;
     font-weight: 500;
+    text-align: center;
+    align-items: center;
+
 }

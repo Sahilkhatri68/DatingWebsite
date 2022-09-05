@@ -35,6 +35,7 @@ function Register() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [age, setAge] = useState("");
+    const [gender, setGender] = useState("");
     const [city, setCity] = useState("");
     const [country, setCountry] = useState("");
     const [phone, setPhone] = useState("");
@@ -47,6 +48,7 @@ function Register() {
             email: email,
             password: password,
             age: age,
+            gender: gender,
             city: city,
             country: country,
             phone: phone
@@ -68,7 +70,7 @@ function Register() {
             })
         })
     }
-
+    // console.log(gender)
     return (
         <>
             <Header />
@@ -173,7 +175,6 @@ function Register() {
                                                 onChange={(e) => setusername(e.target.value)}
                                             />
                                         </label>
-
                                         <label className="block">
                                             <span className="text-neutral-800 dark:text-neutral-200">
                                                 Age
@@ -186,6 +187,17 @@ function Register() {
                                                 onChange={(e) => setAge(e.target.value)}
                                             />
                                         </label>
+                                        <label className="block">
+                                            <span className="text-neutral-800 dark:text-neutral-200">
+                                                Gender
+                                            </span>
+                                            <select id="cars" className="block w-full border bg-white rounded-2xl text-sm font-normal h-11 px-4 py-3 mt-1" name={gender} onChange={(e) => setGender(e.target.value)} >
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                                <option value="Others">Others</option>
+                                            </select>
+                                        </label>
+
                                         <label className="block">
                                             <span className="text-neutral-800 dark:text-neutral-200">
                                                 Phone Number
