@@ -122,12 +122,12 @@
 }
 
 .imgdiv {
-    height: 250px !important;
+    height: 300px !important;
 
 }
 
 .imguser {
-    width: 75%;
+    width: 100%;
     margin: auto;
 }
 

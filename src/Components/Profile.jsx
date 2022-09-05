@@ -118,7 +118,7 @@ function Profile() {
                         <div className="bottomdiv">
                             <div className='leftcard'>
                                 <div className='imgdiv'>
-                                    <img src={u3} alt='img' className='imguser'></img>
+                                    <img src={users.imageurl} alt='User_img' className='imguser'></img>
                                 </div>
                                 <div className='insidecard'>
                                     <div className='textdiv'>Number</div>
