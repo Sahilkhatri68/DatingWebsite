@@ -107,7 +107,7 @@
 }
 
 .leftcard {
-    width: 40%;
+    width: 33%;
     background-color: white;
     box-shadow: -4px 4px 4px 4px #e7e7e7;
     border-radius: 10px;
@@ -267,7 +267,11 @@
 .itemrec {
     margin-left: 10px;
 }
-
+@media(max-width:1240px){
+    .leftcard{
+        width: 45%;
+    }
+}
 @media(max-width:1200px) {
     .maindiv {
         padding: 120px 20px 18px 20px;
@@ -315,5 +319,54 @@
 @media(max-width:800px) {
     .bottomdiv {
         padding: 2px;
+    }
+}
+@media(max-width:750px){
+    .leftcontdiv{
+        display: none;
+    }
+    .rightcontdiv{
+        width: 100%;
+    }
+    .insidecard{
+        margin-top: 20px;
+    }
+}
+@media(max-width:550px){
+    .bottomdiv{
+        display: block;
+    }
+    .leftcard{
+        margin: auto;
+        width: 60%;
+    }
+    .rightcard{
+        margin: 20px auto;
+        width: 60%;
+    }
+}
+
+@media(max-width:450px){
+    .bottomdiv{
+        display: block;
+    }
+    .leftcard{
+        margin: auto;
+        width: 80%;
+    }
+    .rightcard{
+        margin: 20px auto;
+        width: 80%;
+    }
+    .rightprofile{
+        width: 200px;
+    }
+    .dropbtn{
+        font-size: 15px;
+    }
+}
+@media(max-width:400px){
+    .insidecard{
+        margin-top: 2px;
     }
 }
